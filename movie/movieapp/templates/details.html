@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row row-cols-3">
+        <img src="{{id.image.url}}">
+    <div class="vstack gap-3">
+        <div class="p-2 display-1">{{id.name}}({{id.year}})</div>
+        <div class="p-2 lead">{{id.description}}</div>
+        <div class="p-2"><a class="btn btn-outline-primary" href="{% url 'movieapp:update' id.id %}">Update</a>
+            <a class="btn btn-outline-danger" href="{% url 'movieapp:delete' id.id %}">Delete</a></div>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}
